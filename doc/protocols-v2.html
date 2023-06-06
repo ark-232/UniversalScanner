@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Known Discovery Protocol List</title>
+    <style>
+      /* Table Styling */
+      table,
+      tr,
+      th,
+      td {
+        border: 0.05em black solid;
+        border-collapse: collapse;
+      }
+      th {
+        font-weight: normal;
+        background-color: black;
+        color: white;
+      }
+      .keyOK {
+        color: black;
+      }
+      .keyNOK {
+        color: gray;
+        text-decoration: line-through;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"
+    />
+  </head>
+  <body>
+    <h1>Protocol List</h1>
+    <table id="protocols">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Protocol Name</th>
+          <th>Request addresses</th>
+          <th>Request ports</th>
+          <th>Reply addresses</th>
+          <th>Reply ports</th>
+          <th>Integration status</th>
+          <th>Protocol detail</th>
+          <th>Protocol quality *</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>SSDP (UPnP)</td>
+          <td>239.255.255.250</td>
+          <td>1900</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Text based, variable-value, HTTP inspired</td>
+          <td>★★★★★★★</td>
+        </tr>
+        <!-- Add the rest of your data rows here -->
+        <tr>
+          <td>2</td>
+          <td>WSDiscovery (ONVIF)</td>
+          <td>239.255.255.250</td>
+          <td>3702</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>SOAP based (XML)</td>
+          <td>★★★★★★</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Dahua (version 1)</td>
+          <td>255.255.255.255</td>
+          <td>5050</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Fixed binary structure</td>
+          <td>★★★</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Dahua (version 2)</td>
+          <td>239.255.255.251</td>
+          <td>37810</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>JSON embedded into binary structure</td>
+          <td>★★★★★★</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Hikvision</td>
+          <td>239.255.255.250</td>
+          <td>37020</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>XML based</td>
+          <td>★★★★★★</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Axis</td>
+          <td>_axis-nvr._tcp.local, _axis-video._tcp.local</td>
+          <td>5353</td>
+          <td>224.0.0.251, ff02::fb</td>
+          <td>5353</td>
+          <td>Supported</td>
+          <td>mDNS based</td>
+          <td>★★★★★★★★</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Bosch</td>
+          <td>255.255.255.255</td>
+          <td>1757</td>
+          <td>(sender address)</td>
+          <td>1758</td>
+          <td>Supported</td>
+          <td>XML based, Fixed binary structure</td>
+          <td>★★★★</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>GoogleCast</td>
+          <td>_googlecast._tcp.local</td>
+          <td>5353</td>
+          <td>224.0.0.251, ff02::fb</td>
+          <td>5353</td>
+          <td>Supported</td>
+          <td>mDNS based</td>
+          <td>★★★★★★★★</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Hanwha</td>
+          <td>255.255.255.255</td>
+          <td>7701</td>
+          <td>(sender address)</td>
+          <td>7711</td>
+          <td>Supported</td>
+          <td>Fixed binary structure</td>
+          <td>★★★</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Vivotek</td>
+          <td>255.255.255.255</td>
+          <td>10000</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Type-value list</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Sony</td>
+          <td>255.255.255.255</td>
+          <td>2380</td>
+          <td>255.255.255.255</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Text based, variable-value</td>
+          <td>★★★★★★</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Ubiquiti</td>
+          <td>233.89.188.1, 255.255.255.255</td>
+          <td>10001</td>
+          <td>233.89.188.1, 255.255.255.255</td>
+          <td>10001</td>
+          <td>Supported</td>
+          <td>Type-length-value</td>
+          <td>★★★★★★★</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>360Vision</td>
+          <td>255.255.255.255</td>
+          <td>3600</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Text based, variable-value</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>NiceVision</td>
+          <td>255.255.255.255</td>
+          <td>2007</td>
+          <td>255.255.255.255</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Fixed binary structure</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>Panasonic</td>
+          <td>255.255.255.255</td>
+          <td>10669</td>
+          <td>255.255.255.255</td>
+          <td>10670</td>
+          <td>Supported</td>
+          <td>Type-length-value</td>
+          <td>★★★★★★</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Arecont</td>
+          <td>_arec._tcp.local</td>
+          <td>5353</td>
+          <td>224.0.0.251, ff02::fb</td>
+          <td>5353</td>
+          <td>Supported</td>
+          <td>mDNS based</td>
+          <td>★★★★★★★★</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>360Vision</td>
+          <td>255.255.255.255</td>
+          <td>3600</td>
+          <td>(sender address)</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Text based, variable-value</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>NiceVision</td>
+          <td>255.255.255.255</td>
+          <td>2007</td>
+          <td>255.255.255.255</td>
+          <td>(sender port)</td>
+          <td>Supported</td>
+          <td>Fixed binary structure</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>Panasonic</td>
+          <td>255.255.255.255</td>
+          <td>10669</td>
+          <td>255.255.255.255</td>
+          <td>10670</td>
+          <td>Supported</td>
+          <td>Type-length-value</td>
+          <td>★★★★★★</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Arecont</td>
+          <td>_arec._tcp.local</td>
+          <td>5353</td>
+          <td>224.0.0.251, ff02::fb</td>
+          <td>5353</td>
+          <td>Supported</td>
+          <td>mDNS based</td>
+          <td>★★★★★★★★</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>GigEVision</td>
+            <td>255.255.255.255</td>
+            <td>3956</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>Fixed binary structure</td>
+            <td>★★★★★</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Vstarcam</td>
+            <td>255.255.255.255</td>
+            <td>8600</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>Fixed binary structure</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Eaton</td>
+            <td>255.255.255.255</td>
+            <td>4679</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>XML based</td>
+            <td>★★★★★</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Foscam</td>
+            <td>255.255.255.255</td>
+            <td>10000</td>
+            <td>?</td>
+            <td>?</td>
+            <td>Missing test</td>
+            <td>Fixed binary structure</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Dlink</td>
+            <td>255.255.255.255</td>
+            <td>62976</td>
+            <td>?</td>
+            <td>?</td>
+            <td>Missing test</td>
+            <td>Fixed binary structure</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>Hid</td>
+            <td>255.255.255.255</td>
+            <td>4070</td>
+            <td>?</td>
+            <td>?</td>
+            <td>Missing info</td>
+            <td>(protocol detail)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>Lantronix</td>
+            <td>255.255.255.255</td>
+            <td>30718</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>Fixed binary structure</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>Microchip</td>
+            <td>255.255.255.255</td>
+            <td>30303</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>Text based, one value per line</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Advantech</td>
+            <td>255.255.255.255</td>
+            <td>5048</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>Fixed binary structure</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>Eden Optima</td>
+            <td>255.255.255.255</td>
+            <td>8088</td>
+            <td>255.255.255.255</td>
+            <td>8088</td>
+            <td>Supported</td>
+            <td>Separated values and XML based</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>Microsens</td>
+            <td>255.255.255.255</td>
+            <td>1025</td>
+            <td>255.255.255.255</td>
+            <td>8340</td>
+            <td>Missing test</td>
+            <td>(protocol detail)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>CyberPower</td>
+            <td>255.255.255.255</td>
+            <td>53566</td>
+            <td>(sender address)</td>
+            <td>53566</td>
+            <td>Supported</td>
+            <td>Fixed binary structure with xor stegano</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>MSSQL</td>
+            <td>255.255.255.255</td>
+            <td>1434</td>
+            <td>(sender address)</td>
+            <td>(sender port)</td>
+            <td>Supported</td>
+            <td>Text variables and value in CSV list</td>
+            <td>★★★★★</td>
+          </tr>
+          
+
+        <!-- please, continue here -->
+      </tbody>
+    </table>
+    <p>
+      * Protocol quality evaluation Protocol is transport layer independent
+      (IPv4 and IPv6) Protocol is Multicast discovery based (contrary to
+      Broadcast) Remote device does NOT reply in unicast Request port is
+      original (not already used by another protocol, not a round number and not
+      below 1024) Remote device answer to the requester port or to a dynamic
+      reply port (not a fixed port) Protocol support extension to add new values
+      (format likes JSON, TVL, variable-value, XML) contrary to non-extendable
+      format (Binary structure, unnamed variable list) Protocol format is
+      efficient (non-heavy and simple protocols) Protocol is reliable (non XML
+      scheme dependent, non case sensitive, non charset dependent and not space
+      sensitive) Protocol is open source or normalized
+    </p>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#protocols").DataTable();
+      });
+    </script>
+  </body>
+</html>
